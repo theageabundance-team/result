@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Special Gift — Archangel Gabriel</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,800;1,700&family=Lato:wght@400;600;700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+
+    :root {
+      --navy: #1e2d6e;
+      --navy-dark: #141e4f;
+      --gold: #f5a623;
+      --gold-light: #f5c84a;
+      --white: #ffffff;
+      --light-bg: #f7f5f0;
+      --card-bg: #ffffff;
+      --text-main: #1a1a2e;
+      --text-muted: #666;
+      --teal-light: #e8f5f5;
+      --teal-accent: #4a9b9b;
+    }
+
+    body {
+      font-family: 'Lato', sans-serif;
+      background: var(--light-bg);
+      color: var(--text-main);
+      min-height: 100vh;
+    }
+
+    /* ── HERO ── */
+    .hero {
+      background: linear-gradient(170deg, #1a2660 0%, #243278 40%, #1a2d7a 70%, #121e5a 100%);
+      padding: 48px 24px 56px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse at 20% 20%, rgba(255,255,255,0.04) 0%, transparent 60%),
+        radial-gradient(ellipse at 80% 80%, rgba(245,166,35,0.06) 0%, transparent 60%);
+      pointer-events: none;
+    }
+    .hero-inner {
+      position: relative;
+      z-index: 1;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(255,255,255,0.12);
+      border: 1px solid rgba(255,255,255,0.25);
+      border-radius: 999px;
+      padding: 8px 20px;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 1.2px;
+      color: rgba(255,255,255,0.9);
+      margin-bottom: 24px;
+      backdrop-filter: blur(8px);
+    }
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(26px, 5vw, 44px);
+      font-weight: 800;
+      color: #fff;
+      line-height: 1.25;
+      margin-bottom: 16px;
+    }
+    .hero h1 span { color: var(--gold); }
+    .hero-sub {
+      font-size: clamp(15px, 2vw, 18px);
+      color: rgba(255,255,255,0.8);
+      line-height: 1.6;
+      margin-bottom: 32px;
+    }
+    .hero-sub strong { color: var(--gold-light); font-weight: 700; }
+    .angel-img-wrap {
+      width: clamp(140px, 35vw, 200px);
+      height: clamp(140px, 35vw, 200px);
+      border-radius: 50%;
+      background: linear-gradient(135deg, #3a2a10 0%, #6b4c1e 50%, #2d1f0a 100%);
+      border: 4px solid rgba(245,200,74,0.5);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto;
+      box-shadow: 0 0 60px rgba(245,166,35,0.2), 0 16px 48px rgba(0,0,0,0.4);
+      font-size: clamp(60px, 14vw, 100px);
+      animation: float 4s ease-in-out infinite;
+    }
+    @keyframes float {
+      0%,100% { transform: translateY(0); }
+      50%      { transform: translateY(-8px); }
+    }
+
+    /* ── BENEFITS LIST ── */
+    .section {
+      max-width: 640px;
+      margin: 0 auto;
+      padding: 40px 20px;
+    }
+    .benefit-list {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+    .benefit-item {
+      background: var(--card-bg);
+      border-radius: 16px;
+      padding: 18px 20px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+      font-size: clamp(14px, 2vw, 16px);
+      font-weight: 600;
+      color: var(--text-main);
+    }
+    .benefit-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, #f5a623, #e08800);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      flex-shrink: 0;
+    }
+
+    /* ── FEATURES ── */
+    .features-section {
+      background: var(--card-bg);
+      padding: 40px 20px;
+    }
+    .features-inner {
+      max-width: 640px;
+      margin: 0 auto;
+    }
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(20px, 3vw, 28px);
+      font-weight: 700;
+      color: var(--navy);
+      text-align: center;
+      margin-bottom: 28px;
+      line-height: 1.3;
+    }
+    .feature-card {
+      background: var(--light-bg);
+      border-radius: 16px;
+      padding: 22px 20px;
+      margin-bottom: 16px;
+    }
+    .feature-card-header {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 12px;
+    }
+    .feature-icon {
+      width: 42px;
+      height: 42px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, var(--navy), #2a4fa8);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      flex-shrink: 0;
+    }
+    .feature-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(16px, 2.2vw, 19px);
+      font-weight: 700;
+      color: var(--navy);
+    }
+    .feature-sub {
+      font-size: clamp(13px, 1.8vw, 15px);
+      color: var(--text-muted);
+      margin-bottom: 10px;
+    }
+    .feature-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--teal-light);
+      border-radius: 8px;
+      padding: 8px 14px;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--teal-accent);
+    }
+
+    /* ── JOURNEY ── */
+    .journey-section {
+      background: var(--light-bg);
+      padding: 40px 20px;
+    }
+    .journey-inner {
+      max-width: 640px;
+      margin: 0 auto;
+    }
+    .journey-steps {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-bottom: 24px;
+    }
+    .journey-step {
+      background: var(--card-bg);
+      border-radius: 16px;
+      padding: 18px 20px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    }
+    .step-dot {
+      width: 46px;
+      height: 46px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 22px;
+      flex-shrink: 0;
+    }
+    .step-dot.green  { background: #d4f5e0; }
+    .step-dot.blue   { background: #dce8ff; }
+    .step-dot.orange { background: #ffecd0; }
+    .step-dot.purple { background: #ecdcff; }
+    .step-name {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(15px, 2vw, 17px);
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 2px;
+    }
+    .step-desc {
+      font-size: clamp(12px, 1.7vw, 14px);
+      color: var(--text-muted);
+    }
+    .journey-quote {
+      background: var(--teal-light);
+      border-radius: 14px;
+      padding: 20px 24px;
+      font-size: clamp(14px, 1.9vw, 16px);
+      font-style: italic;
+      color: var(--teal-accent);
+      text-align: center;
+      line-height: 1.7;
+      font-weight: 600;
+    }
+
+    /* ── TESTIMONIALS ── */
+    .testimonials-section {
+      background: var(--card-bg);
+      padding: 40px 20px;
+    }
+    .testimonials-inner {
+      max-width: 640px;
+      margin: 0 auto;
+    }
+    .testimonial-card {
+      background: var(--light-bg);
+      border-radius: 16px;
+      padding: 22px 20px;
+      margin-bottom: 16px;
+    }
+    .testimonial-header {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 14px;
+    }
+    .testimonial-avatar {
+      width: 46px;
+      height: 46px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #c8a97a, #a07840);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 22px;
+      flex-shrink: 0;
+      overflow: hidden;
+    }
+    .testimonial-name {
+      font-weight: 700;
+      font-size: 15px;
+      color: var(--text-main);
+    }
+    .testimonial-location {
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+    .testimonial-text {
+      background: var(--teal-light);
+      border-radius: 10px;
+      padding: 14px 16px;
+      font-size: clamp(13px, 1.8vw, 15px);
+      font-style: italic;
+      color: #444;
+      line-height: 1.65;
+      margin-bottom: 12px;
+    }
+    .stars { color: var(--gold); font-size: 18px; letter-spacing: 3px; }
+
+    /* ── PRICING ── */
+    .pricing-section {
+      background: var(--light-bg);
+      padding: 40px 20px 60px;
+    }
+    .pricing-inner {
+      max-width: 640px;
+      margin: 0 auto;
+    }
+    .pricing-sub {
+      text-align: center;
+      font-size: clamp(14px, 1.8vw, 16px);
+      color: var(--text-muted);
+      margin-bottom: 32px;
+    }
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-bottom: 16px;
+    }
+    @media (max-width: 500px) {
+      .pricing-grid { grid-template-columns: 1fr; }
+    }
+    .pricing-card {
+      background: var(--card-bg);
+      border-radius: 20px;
+      padding: 28px 20px;
+      text-align: center;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.07);
+      position: relative;
+    }
+    .pricing-card.featured {
+      background: var(--navy);
+      color: #fff;
+      box-shadow: 0 8px 40px rgba(26,46,110,0.3);
+    }
+    .popular-badge {
+      position: absolute;
+      top: -14px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--gold);
+      color: #fff;
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 0.8px;
+      padding: 6px 18px;
+      border-radius: 999px;
+      white-space: nowrap;
+    }
+    .plan-name {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(18px, 2.5vw, 22px);
+      font-weight: 700;
+      margin-bottom: 8px;
+      color: var(--navy);
+    }
+    .pricing-card.featured .plan-name { color: #fff; }
+    .plan-original {
+      font-size: 15px;
+      color: #aaa;
+      text-decoration: line-through;
+      margin-bottom: 4px;
+    }
+    .pricing-card.featured .plan-original { color: rgba(255,255,255,0.45); }
+    .plan-price {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(34px, 6vw, 48px);
+      font-weight: 800;
+      color: var(--navy);
+      line-height: 1;
+      margin-bottom: 2px;
+    }
+    .pricing-card.featured .plan-price { color: var(--gold); }
+    .plan-period {
+      font-size: 14px;
+      color: var(--text-muted);
+      margin-bottom: 12px;
+    }
+    .pricing-card.featured .plan-period { color: rgba(255,255,255,0.65); }
+    .plan-discount {
+      display: inline-block;
+      background: #f0f0f0;
+      border-radius: 999px;
+      padding: 5px 14px;
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--text-main);
+      margin-bottom: 20px;
+    }
+    .pricing-card.featured .plan-discount {
+      background: rgba(255,255,255,0.12);
+      color: rgba(255,255,255,0.85);
+    }
+    .plan-btn {
+      display: block;
+      width: 100%;
+      padding: 16px;
+      border: none;
+      border-radius: 12px;
+      font-family: 'Lato', sans-serif;
+      font-size: clamp(13px, 1.8vw, 15px);
+      font-weight: 800;
+      letter-spacing: 0.5px;
+      cursor: pointer;
+      transition: transform 0.15s, box-shadow 0.15s;
+      text-decoration: none;
+    }
+    .plan-btn.dark {
+      background: var(--navy);
+      color: #fff;
+    }
+    .plan-btn.gold {
+      background: linear-gradient(135deg, var(--gold-light), var(--gold));
+      color: #fff;
+      box-shadow: 0 4px 20px rgba(245,166,35,0.4);
+    }
+    .plan-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 28px rgba(0,0,0,0.2); }
+    .plan-btn:active { transform: scale(0.98); }
+
+    .pricing-card-full {
+      background: var(--card-bg);
+      border-radius: 20px;
+      padding: 28px 20px;
+      text-align: center;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.07);
+      max-width: 320px;
+    }
+
+    .pricing-footer {
+      text-align: center;
+      margin-top: 24px;
+      font-size: 13px;
+      color: var(--text-muted);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ── HERO ── -->
+  <section class="hero">
+    <div class="hero-inner">
+      <div class="hero-badge">✦ SPECIAL GIFT</div>
+      <h1>Receive Daily Guidance from<br>Archangel <span>Gabriel</span></h1>
+      <p class="hero-sub"><strong id="hero-name">Friend</strong>, discover how to have more clarity, protection and abundance in your life</p>
+      <div class="angel-img-wrap">👼</div>
+    </div>
+  </section>
+
+  <!-- ── BENEFITS ── -->
+  <section class="section">
+    <div class="benefit-list">
+      <div class="benefit-item">
+        <div class="benefit-icon">🎯</div>
+        Find clarity and direction for your life
+      </div>
+      <div class="benefit-item">
+        <div class="benefit-icon">✨</div>
+        Awaken all your spiritual potential
+      </div>
+      <div class="benefit-item">
+        <div class="benefit-icon">🛡️</div>
+        Protect yourself from negative energies
+      </div>
+      <div class="benefit-item">
+        <div class="benefit-icon">💰</div>
+        Manifest abundance and prosperity
+      </div>
+      <div class="benefit-item">
+        <div class="benefit-icon">☮️</div>
+        Achieve inner peace and balance
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FEATURES ── -->
+  <section class="features-section">
+    <div class="features-inner">
+      <h2 class="section-title">What Gabriel offers you every day</h2>
+
+      <div class="feature-card">
+        <div class="feature-card-header">
+          <div class="feature-icon">🌅</div>
+          <div class="feature-title">Daily Messages from Gabriel</div>
+        </div>
+        <p class="feature-sub">Receive personalized guidance every morning</p>
+        <div class="feature-tag">✦ Start your day with clarity and purpose</div>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-card-header">
+          <div class="feature-icon">🧘</div>
+          <div class="feature-title">Guided Meditations</div>
+        </div>
+        <p class="feature-sub">Relaxing audios with Gabriel's energy</p>
+        <div class="feature-tag">✦ Find peace in just minutes</div>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-card-header">
+          <div class="feature-icon">🛡️</div>
+          <div class="feature-title">Spiritual Protection</div>
+        </div>
+        <p class="feature-sub">Simple and powerful protection rituals</p>
+        <div class="feature-tag">✦ Stay protected from negative energies</div>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-card-header">
+          <div class="feature-icon">🌿</div>
+          <div class="feature-title">Prosperity Practices</div>
+        </div>
+        <p class="feature-sub">Techniques to attract abundance in your life</p>
+        <div class="feature-tag">✦ Open paths to achievements</div>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-card-header">
+          <div class="feature-icon">⭐</div>
+          <div class="feature-title">Weekly Predictions</div>
+        </div>
+        <p class="feature-sub">Insights for the week with Gabriel</p>
+        <div class="feature-tag">✦ Prepare to seize opportunities</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── JOURNEY ── -->
+  <section class="journey-section">
+    <div class="journey-inner">
+      <h2 class="section-title">Your Evolution Journey with Archangel Gabriel</h2>
+      <div class="journey-steps">
+        <div class="journey-step">
+          <div class="step-dot green">🌱</div>
+          <div>
+            <div class="step-name">Awakening</div>
+            <div class="step-desc">First contact with your Angel</div>
+          </div>
+        </div>
+        <div class="journey-step">
+          <div class="step-dot blue">💫</div>
+          <div>
+            <div class="step-name">Connection</div>
+            <div class="step-desc">Strengthening the spiritual bond</div>
+          </div>
+        </div>
+        <div class="journey-step">
+          <div class="step-dot orange">🔆</div>
+          <div>
+            <div class="step-name">Evolution</div>
+            <div class="step-desc">Development of gifts and abilities</div>
+          </div>
+        </div>
+        <div class="journey-step">
+          <div class="step-dot purple">⭐</div>
+          <div>
+            <div class="step-name">Mastery</div>
+            <div class="step-desc">Harmony and full realization</div>
+          </div>
+        </div>
+      </div>
+      <div class="journey-quote">
+        "Every step in your spiritual journey is an opportunity for growth and transformation. Archangel Gabriel is here to guide you at every moment."
+      </div>
+    </div>
+  </section>
+
+  <!-- ── TESTIMONIALS ── -->
+  <section class="testimonials-section">
+    <div class="testimonials-inner">
+      <h2 class="section-title">What people are saying</h2>
+
+      <div class="testimonial-card">
+        <div class="testimonial-header">
+          <div class="testimonial-avatar">👩🏾</div>
+          <div>
+            <div class="testimonial-name">Mary Johnson</div>
+            <div class="testimonial-location">New York, USA</div>
+          </div>
+        </div>
+        <div class="testimonial-text">"Gabriel's daily guidance helped me find my path. In 30 days, my life gained more meaning and purpose."</div>
+        <div class="stars">★★★★★</div>
+      </div>
+
+      <div class="testimonial-card">
+        <div class="testimonial-header">
+          <div class="testimonial-avatar">👨🏽</div>
+          <div>
+            <div class="testimonial-name">John Smith</div>
+            <div class="testimonial-location">Los Angeles, USA</div>
+          </div>
+        </div>
+        <div class="testimonial-text">"The meditations are amazing! In just a few weeks, my anxiety decreased and I started attracting more positive opportunities."</div>
+        <div class="stars">★★★★★</div>
+      </div>
+
+      <div class="testimonial-card">
+        <div class="testimonial-header">
+          <div class="testimonial-avatar">👩🏼</div>
+          <div>
+            <div class="testimonial-name">Sarah Wilson</div>
+            <div class="testimonial-location">Chicago, USA</div>
+          </div>
+        </div>
+        <div class="testimonial-text">"The practices are simple to follow. I feel more connected and protected every day."</div>
+        <div class="stars">★★★★★</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── PRICING ── -->
+  <section class="pricing-section">
+    <div class="pricing-inner">
+      <h2 class="section-title">Choose Your Plan</h2>
+      <p class="pricing-sub">Select the option that best fits your spiritual journey</p>
+
+      <div class="pricing-grid">
+        <!-- 1 Month -->
+        <div class="pricing-card">
+          <div class="plan-name">1 Month</div>
+          <div class="plan-original">$67</div>
+          <div class="plan-price">$27</div>
+          <div class="plan-period">/month</div>
+          <div class="plan-discount">60% discount!</div>
+          <a href="#" class="plan-btn dark">CHOOSE THIS PLAN</a>
+        </div>
+
+        <!-- 3 Months — Featured -->
+        <div class="pricing-card featured">
+          <div class="popular-badge">MOST POPULAR</div>
+          <div class="plan-name">3 Months</div>
+          <div class="plan-original">$97</div>
+          <div class="plan-price">$45</div>
+          <div class="plan-period">every 3 months</div>
+          <div class="plan-discount">54% discount!</div>
+          <a href="#" class="plan-btn gold">CHOOSE THIS PLAN</a>
+        </div>
+      </div>
+
+      <!-- 1 Year -->
+      <div style="display:flex; justify-content:center;">
+        <div class="pricing-card pricing-card-full" style="width:100%; max-width:320px;">
+          <div class="plan-name">1 Year</div>
+          <div class="plan-original">$197</div>
+          <div class="plan-price">$74</div>
+          <div class="plan-period">/year</div>
+          <div class="plan-discount">62% discount!</div>
+          <a href="#" class="plan-btn dark">CHOOSE THIS PLAN</a>
+        </div>
+      </div>
+
+      <div class="pricing-footer">
+        🔒 Secure payment &nbsp;·&nbsp; Cancel anytime &nbsp;·&nbsp; 24/7 support
+      </div>
+    </div>
+  </section>
+
+  <script>
+    // Pass name from URL param ?name=John
+    var params = new URLSearchParams(location.search);
+    var name = params.get('name');
+    if (name) {
+      document.getElementById('hero-name').textContent = name;
+    }
+  </script>
+</body>
+</html>
